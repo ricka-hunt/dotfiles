@@ -1,0 +1,2 @@
+#!/bin/sh
+swaymsg -t get_outputs | jq -e '.[0].transform == "270"' && swaymsg 'output * transform 0' || swaymsg 'output * transform 270'

@@ -46,6 +46,9 @@ input type:keyboard {
 # bluetui
     # bindsym $mod+b exec 'swaymsg fullscreen disable'; exec ~/.shells/bluetui-wrapper.sh
     bindsym $mod+b exec rofi-bluetooth
+# rotate toggler
+    bindsym $mod+Shift+Insert exec ~/.config/sway/rotate
+
 
 # toggle scaling
     bindsym shift+$mod+backslash exec ~/.shells/sway-scale-toggle.sh
