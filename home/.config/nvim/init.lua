@@ -1,8 +1,8 @@
 vim = vim
 vim.pack.add({ "https://codeberg.org/trickyni/desert-witch.nvim" })
 vim.cmd.colorscheme("desert-witch")
+-- vim.api.nvim_set_hl(0, "@lsp.type.operator.qml", { fg = "#e86045" })
 -- OPTION  ----------------------------------------------------
-
 --stylua: ignore start
 vim.g.mapleader      = " " -- leader key (spacebar)
 vim.opt.shortmess:append("Swl")
@@ -26,7 +26,7 @@ vim.o.signcolumn     = "yes:1" -- gutter to the left of the number column
 vim.o.inccommand     = "nosplit" -- shows find/replace results live
 vim.opt.backspace    = { "start", "eol", "indent" }
 vim.o.list           = true -- whow trailing whitespaces and tab characters
-vim.opt.listchars    = { leadmultispace = "▏ ", tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars    = {tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.timeoutlen   = 300 --timeout on keys with followups
 vim.o.winborder      = "rounded" --border for floating windows
 
@@ -146,7 +146,6 @@ vim.pack.add({
   { src = "https://github.com/chrisgrieser/nvim-rip-substitute" },
   { src = "https://github.com/mikavilpas/yazi.nvim" },
   { src = "https://github.com/smjonas/live-command.nvim" },
-  { src = "https://github.com/NMAC427/guess-indent.nvim" },
   { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
@@ -158,7 +157,6 @@ vim.pack.add({
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/OXY2DEV/helpview.nvim" },
 })
-require("guess-indent").setup()
 require("mini.comment").setup()
 require("mini.pairs").setup()
 require("mini.surround").setup()
@@ -168,7 +166,7 @@ require("neoscroll").setup({ easing = "quintic" })
 require("which-key").setup({ preset = "helix", plugins = { presets = { motions = false } } })
 require("gitsigns").setup({ signs = { delete = "─" } })
 require("yazi").setup()
-require("ibl").setup({ indent = { char = "▏", highlight = none } })
+require("ibl").setup({ indent = { char = "▏", highlight = none }, scope = { enabled = false } })
 require("trouble").setup({ focus = true, win = { position = "bottom" }, open_no_results = true })
 require("live-command").setup({ commands = { Norm = { cmd = "norm" }, G = { cmd = "g" } } })
 vim.cmd("cnoreabbrev norm Norm")
@@ -196,12 +194,12 @@ require("conform").setup({
     css        = { "prettier" },
     yaml       = { "prettier" },
     json       = { "prettier" },
-    qml        = { "qmlformat" },
+    qml       = { "prettier" },
   },
-  formatters = {
-    stylua   = { prepend_args = { "--indent-type", "Spaces", "--indent-width", "2" } },
-    shfmt    = { prepend_args = { "-i = 2" } },
-    prettier = { prepend_args = { "--tab-width", "2" } },
+  formatters   = {
+    stylua     = { prepend_args = { "--indent-type", "Spaces", "--indent-width", "2" } },
+    shfmt      = { prepend_args = { "-i = 2" } },
+    prettier   = { prepend_args = { "--tab-width", "2" ,"--experimental-ternaries","false"} },
   },
   --stylua: ignore end
 })
@@ -243,9 +241,8 @@ require("nvim-treesitter.configs").setup({
     "jq",   "json",  "lua",  "markdown", "markdown_inline", "qmljs",      "regex", "sql",
     "toml", "typst", "sway", "vimdoc",   "yaml",
   },
-
-  -- stylua: ignore end
 })
+-- stylua: ignore end
 require("treesitter-context").setup()
 
 ---RenderMarkdown-----------------------------------------------------
@@ -302,6 +299,7 @@ require("lualine").setup({
     lualine_z = { "searchcount", "location" },
   },
 })
+
 ----rainbow-delimeters----------------------------------------------------
 vim.g.rainbow_delimiters = {
   highlight = {
@@ -313,6 +311,7 @@ vim.g.rainbow_delimiters = {
     -- "RainbowDelimiterViolet",
     -- "RainbowDelimiterCyan",
   },
+  blacklist = { "html" },
 }
 
 ----snacks-----------------------------------------------------------------
