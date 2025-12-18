@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=rmpc
+Exec= kitty --single-instance rmpc rmpc
+Icon=music-pixel-sand
+Terminal=false
+Type=Application
+Keywords=music,mpd
+

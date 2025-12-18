@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Mistpaw Ravine Demo
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/3788020
+Icon=steam_icon_3788020
+Terminal=false
+Type=Application
+Categories=Game;
