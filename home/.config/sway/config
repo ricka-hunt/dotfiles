@@ -71,7 +71,8 @@ input type:keyboard {
 # └───────────────────────────────────────────────────────────────────────────┘
 
 # Music Keys
-bindsym F10 exec playerctl play-pause
+bindsym F10 exec playerctl -p mpd play-pause
+bindsym shift+F10 exec playerctl play-pause
 bindsym F11 exec playerctl stop
 
 floating_modifier $mod normal
