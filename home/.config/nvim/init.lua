@@ -156,6 +156,7 @@ vim.pack.add({
   { src = "https://github.com/stevearc/conform.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/OXY2DEV/helpview.nvim" },
+  { src = "https://github.com/lambdalisue/vim-suda" },
 })
 require("mini.comment").setup()
 require("mini.pairs").setup()

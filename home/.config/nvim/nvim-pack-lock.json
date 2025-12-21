@@ -22,7 +22,7 @@
       "src": "https://github.com/bullets-vim/bullets.vim"
     },
     "conform.nvim": {
-      "rev": "9b8fa5e0b78168f68bee9bf886dc20f287c61e02",
+      "rev": "328c2f1dda56f933d3337a1316e1020ba30ba6aa",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "desert-witch.nvim": {
@@ -204,6 +204,10 @@
     "vim-pencil": {
       "rev": "6d70438a8886eaf933c38a7a43a61adb0a7815ed",
       "src": "https://github.com/preservim/vim-pencil"
+    },
+    "vim-suda": {
+      "rev": "c492741b4679b3cdd4d9e34138209784e061d916",
+      "src": "https://github.com/lambdalisue/vim-suda"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",

@@ -1,24 +1,14 @@
-[plugin]
-prepend_previewers = [
-  { name = "*.md", run = "glow" },
-# Archive previewer
-	{ mime = "application/*zip",            run = "ouch" },
-	{ mime = "application/x-tar",           run = "ouch" },
-	{ mime = "application/x-bzip2",         run = "ouch" },
-	{ mime = "application/x-7z-compressed", run = "ouch" },
-	{ mime = "application/x-rar",           run = "ouch" },
-	{ mime = "application/x-xz",            run = "ouch" },
-	{ mime = "application/xz",              run = "ouch" },
-]
+[[plugin.prepend_previewers]]
+ url = "*.md"
+ run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' 
+
+
 [opener]
 extract = [
 	{ run = 'ouch d -y "$@"', desc = "Extract here with ouch" },
 ]
 edit = [
 	{ run = '${EDITOR:-vi} "$@"', desc = "Edit", block = true, for = "unix" },
-]
-vim = [
-	{ run = 'vim "$0"', desc = "Vim", block = true},
 ]
 open = [
 	{ run = 'xdg-open "$1"', desc = "Open" },
@@ -29,15 +19,15 @@ view = [
 play = [
 	{ run = 'mpv --force-window "$@"', orphan = true, desc = "Play" },
 ]
-kate = [
-	{ run = 'kate "$0"', orphan = true, desc = "Kate" },
+nemo = [
+	{ run = 'nemo "$@"', orphan = true, desc = "Nemo" },
 ]
 [open]
 rules = [
 	# Folder
 	# { name = "*/", use = [ "open", "reveal" ] },
 	# Text"edit",
-	{ mime = "text/*", use = [ "edit", "reveal", "kate", "vim" ] },
+	{ mime = "text/*", use = [ "edit", "reveal"] },
 	# Image
 	{ mime = "image/*", use = [ "view", "reveal" ] },
 	# Media
@@ -50,5 +40,5 @@ rules = [
 	# Empty file
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Fallback
-	{ name = "*", use = [ "open", "reveal" ] },
+	{ name = "*", use = [ "open", "reveal", "nemo" ] },
 ]
