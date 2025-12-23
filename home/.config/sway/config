@@ -70,6 +70,10 @@ input type:keyboard {
 # │ mouse button for dragging.                                                │
 # └───────────────────────────────────────────────────────────────────────────┘
 
+# Audio Keys
+# bindsym $mod+F10 exec playerctl -p mpd play-pause
+
+
 # Music Keys
 bindsym F10 exec playerctl -p mpd play-pause
 bindsym shift+F10 exec playerctl play-pause
