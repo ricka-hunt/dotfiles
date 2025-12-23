@@ -1,8 +1,0 @@
-(defvar mei "false")
-(defwidget mew []
-  (box :class "status"
-    (revealer :reveal mei :transition "slideright" :duration "10000ms"
-      (label :text '/ᐠ˵- ⩊ -˵マ  '  :style "margin-top: -99px; margin-bottom: -99px; ")
-    )
-  )
-)
