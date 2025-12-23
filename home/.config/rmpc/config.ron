@@ -2,7 +2,7 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-    address: "/run/user/1000/mpd.sock",
+    address: "/tmp/mpd.sock",
     password: None,
     theme: None,
     cache_dir: ".config/rmpc/cache",
