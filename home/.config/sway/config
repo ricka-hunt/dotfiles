@@ -71,7 +71,9 @@ input type:keyboard {
 # └───────────────────────────────────────────────────────────────────────────┘
 
 # Audio Keys
-# bindsym $mod+F10 exec playerctl -p mpd play-pause
+bindsym XF86AudioPlay  exec playerctl -p mpd play-pause
+bindsym XF86AudioNext exec playerctl -p mpd next
+bindsym XF86AudioPrev exec playerctl -p mpd previous
 
 
 # Music Keys
